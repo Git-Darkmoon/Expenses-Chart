@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>FM | Expenses chart</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-</head>
-<body>
+    <title>FM | Expenses chart</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <section class="balance">
+          <h4 id="title">My Balance</h4>
+          <h2 id="balanceAmount">$921.48</h2>
+        </section>
+        <section class="spending">
+          <h2 id="spendingTitle">Spending - Last 7 days</h2>
+          <div class="graph"></div>
+        </section>
+        <section class="belowInfo">
+          <div class="leftElements">
+            <h4 id="totalTitle">Total this month</h4>
+            <h1 id="monthTotal">$478.33</h1>
+          </div>
+          <div class="rightElements">
+            <h4 id="growth">+2.4%</h4>
+            <h4 id="lastMonthLabel">from last month</h4>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      Developed by
+      <a
+        href="https://github.com/Git-Darkmoon"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Darkmoon</a
+      >
+      | Fronted Mentor
+    </footer>
 
-  My balance
-  $921.48
-
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-</body>
+    <!-- mon tue wed thu fri sat sun    -->
+  </body>
 </html>
