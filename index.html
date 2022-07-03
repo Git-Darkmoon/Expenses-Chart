@@ -12,14 +12,22 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="stylesheet" href="styles/style.css" />
+
     <title>FM | Expenses chart</title>
   </head>
   <body>
     <main>
       <div class="container">
         <section class="balance">
-          <h4 id="title">My Balance</h4>
-          <h2 id="balanceAmount">$921.48</h2>
+          <div class="information">
+            <p id="title">My Balance</p>
+            <h2 id="balanceAmount">$921.48</h2>
+          </div>
+          <div class="logo">
+            <div id="whiteCircle"></div>
+            <div id="blackCircle"></div>
+          </div>
         </section>
         <section class="spending">
           <h2 id="spendingTitle">Spending - Last 7 days</h2>
@@ -45,7 +53,7 @@
         rel="noopener noreferrer"
         >Darkmoon</a
       >
-      | Fronted Mentor
+      | Frontend Mentor
     </footer>
 
     <!-- mon tue wed thu fri sat sun    -->

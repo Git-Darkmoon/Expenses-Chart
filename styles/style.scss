@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+$Soft_orange: hsl(10, 79%, 65%);
+$Cream: hsl(27, 66%, 90%);
+$Pale_orange: hsl(33, 100%, 98%);
+$Dark_brown: hsl(25, 47%, 15%);
+$Padding_Y: 1rem;
+$Padding_X: 1.35rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "DM Sans", sans-serif;
+}
+
+@mixin centerAll($justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+
+body {
+  background-color: $Cream;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+
+  .balance {
+    background-color: $Soft_orange;
+    width: 100%;
+    height: 4rem;
+    padding-block: $Padding_Y;
+    padding-inline: $Padding_X;
+    margin-bottom: $Padding_Y;
+
+    @include centerAll(space-between);
+    border-radius: 0.75rem;
+  }
+
+  .spending,
+  .belowInfo {
+    background-color: $Pale_orange;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+
+  padding-block: $Padding_Y;
+  color: $Dark_brown;
+
+  a {
+    color: $Soft_orange;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
