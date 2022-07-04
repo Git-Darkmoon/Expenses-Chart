@@ -6,6 +6,7 @@ $Pale_orange: hsl(33, 100%, 98%);
 $Dark_brown: hsl(25, 47%, 15%);
 $Padding_Y: 1rem;
 $Padding_X: 1.35rem;
+$Transition_me: 0.3s;
 
 * {
   margin: 0;
@@ -13,12 +14,20 @@ $Padding_X: 1.35rem;
   box-sizing: border-box;
 
   font-family: "DM Sans", sans-serif;
+  font-size: 18px;
 }
 
 @mixin centerAll($justify) {
   display: flex;
   align-items: center;
   justify-content: $justify;
+}
+
+@mixin circle {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  border-radius: 50%;
 }
 
 body {
@@ -42,6 +51,35 @@ body {
 
     @include centerAll(space-between);
     border-radius: 0.75rem;
+
+    .information {
+      color: $Cream;
+
+      #title {
+        font-size: 12px;
+      }
+      #balanceAmount {
+        font-size: 22px;
+      }
+    }
+
+    .logo {
+      @include centerAll(center);
+
+      #whiteCircle {
+        @include circle();
+
+        position: relative;
+        left: 20%;
+        border: 2.5px solid $Cream;
+      }
+
+      #darkCircle {
+        @include circle();
+
+        background-color: $Dark_brown;
+      }
+    }
   }
 
   .spending,
@@ -59,14 +97,28 @@ footer {
   padding-block: $Padding_Y;
   color: $Dark_brown;
 
-  a {
+  #githubProfile {
     color: $Soft_orange;
     font-weight: 700;
     text-decoration: none;
-    transition: 0.3s;
+    position: relative;
 
-    &:hover {
-      transform: scale(1.2);
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: $Soft_orange;
+      transform-origin: bottom right;
+      transition: transform $Transition_me ease-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
   }
 }

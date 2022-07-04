@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
+  font-size: 18px;
 }
 
 body {
@@ -29,6 +30,34 @@ body {
   justify-content: space-between;
   border-radius: 0.75rem;
 }
+.container .balance .information {
+  color: hsl(27deg, 66%, 90%);
+}
+.container .balance .information #title {
+  font-size: 12px;
+}
+.container .balance .information #balanceAmount {
+  font-size: 22px;
+}
+.container .balance .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .balance .logo #whiteCircle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  position: relative;
+  left: 20%;
+  border: 2.5px solid hsl(27deg, 66%, 90%);
+}
+.container .balance .logo #darkCircle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: hsl(25deg, 47%, 15%);
+}
 .container .spending,
 .container .belowInfo {
   background-color: hsl(33deg, 100%, 98%);
@@ -42,12 +71,25 @@ footer {
   padding-block: 1rem;
   color: hsl(25deg, 47%, 15%);
 }
-footer a {
+footer #githubProfile {
   color: hsl(10deg, 79%, 65%);
   font-weight: 700;
   text-decoration: none;
-  transition: 0.3s;
+  position: relative;
 }
-footer a:hover {
-  transform: scale(1.2);
+footer #githubProfile::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: hsl(10deg, 79%, 65%);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+footer #githubProfile:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }/*# sourceMappingURL=style.css.map */
