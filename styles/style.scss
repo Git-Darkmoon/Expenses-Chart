@@ -4,9 +4,12 @@ $Soft_orange: hsl(10, 79%, 65%);
 $Cream: hsl(27, 66%, 90%);
 $Pale_orange: hsl(33, 100%, 98%);
 $Dark_brown: hsl(25, 47%, 15%);
+$Brigth_brown: hsl(28, 10%, 53%);
+$Blueish: hsl(186, 34%, 60%);
 $Padding_Y: 1rem;
 $Padding_X: 1.35rem;
 $Transition_me: 0.3s;
+$barGraph_width: 1.75rem;
 
 * {
   margin: 0;
@@ -39,7 +42,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20rem;
+  width: 25rem;
+
+  // Balance Section Styling
 
   .balance {
     background-color: $Soft_orange;
@@ -82,9 +87,40 @@ body {
     }
   }
 
+  // Spending Section Styling
+
+  .spending {
+    padding-block: $Padding_Y;
+
+    .graph {
+      padding-top: $Padding_Y * 2;
+
+      @include centerAll(center);
+      gap: 1rem;
+
+      h5 {
+        color: $Brigth_brown;
+      }
+
+      .barGraph {
+        @include centerAll(center);
+        flex-direction: column;
+        gap: 1rem;
+
+        #bar {
+          width: $barGraph_width;
+          height: 8rem;
+          background-color: $Blueish;
+          border-radius: 0.35rem;
+        }
+      }
+    }
+  }
+
   .spending,
   .belowInfo {
     background-color: $Pale_orange;
+    padding-inline: $Padding_X;
   }
 }
 
